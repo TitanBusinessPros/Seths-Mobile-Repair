@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seth's Mobile Repair Service - Oklahoma City, OK</title>
+    <!-- Meta tags updated for Oklahoma City & ASE -->
+    <meta name="description" content="Seth's Mobile Repair Service provides ASE certified mobile mechanic services in Oklahoma City, OK and surrounding areas. 24/7 emergency repairs at your location.">
+    <meta name="keywords" content="mobile mechanic, Oklahoma City, auto repair, ASE certified, emergency mechanic, mobile repair">
+    <!-- Favicon removed (previously Loyd's) – can be replaced later if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #111;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://github.com/TitanBusinessPros/Loyds-Mobile-Mechanic/raw/main/Loyds-BG-1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            background-color: #e63946;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #d62839;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        /* Main Content Styles */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #f0f0f0;
+        }
+        
+        .highlight {
+            color: #e63946;
+            font-weight: bold;
+        }
+
+        /* ASE badge styling */
+        .ase-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(230, 57, 70, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid #e63946;
+            margin: 20px auto 0;
+            font-weight: 600;
+            font-size: 1.2rem;
+            backdrop-filter: blur(4px);
+            width: fit-content;
+        }
+
+        .ase-badge i {
+            color: #e63946;
+            font-size: 1.8rem;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .service-card i {
+            font-size: 3rem;
+            color: #e63946;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #e63946;
+            margin-right: 15px;
+            width: 30px;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            color: #fff;
+            background-color: #333;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #e63946;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .website-credit {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        .website-credit a {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .website-credit a:hover {
+            color: #d62839;
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                max-width: 280px;
+                margin-bottom: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 220px;
+            }
+            
+            .btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .hero {
+                padding: 80px 0 50px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Image (kept generic) -->
+    <div class="background-image"></div>
+    <div class="overlay"></div>
+    
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <!-- New logo for Seth's Mobile Repair -->
+                        <img src="https://github.com/TitanBusinessPros/Seths-Mobile-Repair/raw/main/SMR-Logo-T.png" alt="Seth's Mobile Repair Service Logo">
+                    </div>
+                </div>
+                <div class="header-buttons">
+                    <!-- Only Call Now button remains; View My Work removed -->
+                    <a href="tel:4056532051" class="btn"><i class="fas fa-phone-alt"></i> Call Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Seth's Mobile Repair Service</h1>
+            <p><span class="highlight">24/7 Fast & Reliable</span> auto repair service serving <span class="highlight">Oklahoma City, OK</span> and all of Oklahoma. We come to you - at home, work, or on the road.</p>
+            <!-- Updated phone number (single) -->
+            <p>Call or text: <span class="highlight">(405) 653-2051</span></p>
+            <!-- ASE certification badge added -->
+            <div class="ase-badge">
+                <i class="fas fa-certificate"></i>
+                <span>ASE CERTIFIED TECHNICIANS</span>
+                <i class="fas fa-wrench"></i>
+            </div>
+            <a href="#contact" class="btn" style="margin-top: 20px;"><i class="fas fa-wrench"></i> Request Service</a>
+        </div>
+    </section>
+    
+    <!-- Services Section (unchanged content but note ASE certified implied) -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-car-battery"></i>
+                    <h3>Electrical Systems</h3>
+                    <p>Battery replacement, alternator repair, starter issues, and electrical diagnostics.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-oil-can"></i>
+                    <h3>Oil Changes & Maintenance</h3>
+                    <p>Full-service oil changes, fluid checks, and preventive maintenance.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Brake Repair</h3>
+                    <p>Brake pad replacement, rotor resurfacing, caliper repair, and brake fluid flush.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cog"></i>
+                    <h3>Engine Diagnostics</h3>
+                    <p>Check engine light diagnostics, engine repair, and performance troubleshooting.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-circle-notch"></i>
+                    <h3>Tire Services</h3>
+                    <p>Tire rotation, flat repair, and tire replacement services at your location.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-trailer"></i>
+                    <h3>24/7 Emergency Service</h3>
+                    <p>Locked out, dead battery, flat tire? We're available 24/7 for emergencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <!-- Single phone number, secondary removed -->
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <p><strong>Phone:</strong> (405) 653-2051</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p><strong>Email Address:</strong></p>
+                            <p>Click the envelope icon to email us</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p><strong>Service Area:</strong></p>
+                            <p>Oklahoma City, OK and surrounding areas</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <p><strong>Availability:</strong></p>
+                            <p>24 hours a day, 7 days a week</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Request Service</h3>
+                    <!-- Updated form email and subject -->
+                    <form action="https://formsubmit.co/kscott7922@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Service Request - Seth's Mobile Repair Service">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://www.okiewebsiteguy.com">
+                        
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email Address</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle">Vehicle Information</label>
+                            <input type="text" id="vehicle" name="vehicle" placeholder="Year, Make, Model" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <input type="text" id="service" name="service" placeholder="e.g., Oil Change, Brake Repair" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" name="message" placeholder="Please describe the issue and provide your location..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;"><i class="fas fa-paper-plane"></i> Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <!-- Updated footer logo -->
+                    <img src="https://github.com/TitanBusinessPros/Seths-Mobile-Repair/raw/main/SMR-Logo-T.png" alt="Seth's Mobile Repair Service Logo" style="max-width: 250px;">
+                </div>
+                <p style="margin: 20px 0; max-width: 600px;">Seth's Mobile Repair Service - 24/7 fast and reliable service serving Oklahoma City and all of Oklahoma. ASE certified technicians at your location.</p>
+                
+                <!-- Social links: Facebook icon removed as requested -->
+                <div class="social-links">
+                    <a href="tel:4056532051" title="Call Us">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                    <a href="mailto:kscott7922@gmail.com" title="Email Us">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; <span id="currentYear"></span> Seth's Mobile Repair Service. All rights reserved.</p>
+                    <p>Serving Oklahoma City, OK and surrounding areas.</p>
+                </div>
+                
+                <div class="website-credit">
+                    <p>This website was created by <a href="https://www.okiewebsiteguy.com" target="_blank">The Okie Website Guy</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission confirmation (optional)
+        const contactForm = document.querySelector('form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function() {
+                console.log('Form submitted to kscott7922@gmail.com');
+            });
+        }
+        
+        // Make the email icon in contact section clickable with updated email
+        const emailIcon = document.querySelector('.contact-item .fa-envelope');
+        if(emailIcon) {
+            // Find the parent contact-item to replace or wrap appropriately
+            const contactItem = emailIcon.closest('.contact-item');
+            if (contactItem) {
+                // Create a new link for the icon
+                const emailLink = document.createElement('a');
+                emailLink.href = 'mailto:kscott7922@gmail.com';
+                emailLink.title = 'Email Seth\'s Mobile Repair';
+                emailLink.style.color = 'inherit';
+                emailLink.style.textDecoration = 'none';
+                
+                // Replace the icon with the linked version
+                const parent = emailIcon.parentNode;
+                parent.insertBefore(emailLink, emailIcon);
+                emailLink.appendChild(emailIcon);
+                
+                // Add hover effect
+                emailLink.addEventListener('mouseenter', function() {
+                    this.style.color = '#d62839';
+                });
+                emailLink.addEventListener('mouseleave', function() {
+                    this.style.color = '#e63946';
+                });
+            }
+        }
+    </script>
+</body>
+</html>
